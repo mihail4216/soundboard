@@ -46,6 +46,7 @@ class FFmpegManager {
 
             override fun onStart() {
                 Log.d("ffmpeg", "onStart")
+
             }
 
         }
