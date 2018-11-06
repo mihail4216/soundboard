@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "52720510728",
+    "firebase_url": "https://soundboards-7f548.firebaseio.com",
+    "project_id": "soundboards-7f548",
+    "storage_bucket": "soundboards-7f548.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52720510728:android:a8ab7531887f9689",
+        "android_client_info": {
+          "package_name": "com.example.mihail.soundboards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52720510728-kkno1dbpg2jga1i9noc83qbf732d6f77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mihail.soundboards",
+            "certificate_hash": "ee468cb1faf25e3015dcc500b1d2bafa6426758b"
+          }
+        },
+        {
+          "client_id": "52720510728-i460ei7qtdrqh0dcn5q6kquupplgia00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS8QYYRsvSUABrB5Cl_cqLrNHS7LxU14U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52720510728-i460ei7qtdrqh0dcn5q6kquupplgia00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
