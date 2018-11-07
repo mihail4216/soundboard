@@ -14,13 +14,14 @@ class FFmpegManager {
             FFmpeg.getInstance(App.instance.applicationContext).isSupported
         }
         fun createAudio(context: Context, url: String) {
-            val cmd = "ffmpeg -version"
-            FFmpeg.getInstance(context).execute(arrayOf(cmd), listenerFFmpeg)
+//            val cmd = "ffmpeg -version"
+            val cmd = "-version".split(" ").toTypedArray()
+            FFmpeg.getInstance(context).execute(cmd, listenerFFmpeg)
         }
 
         fun createAudio(url: String) {
-            val cmd = ""
-            FFmpeg.getInstance(App.instance.applicationContext).execute(arrayOf(cmd), listenerFFmpeg)
+            val cmd = "-version".split(" ").toTypedArray()
+            FFmpeg.getInstance(App.instance.applicationContext).execute(cmd, listenerFFmpeg)
         }
 
 
