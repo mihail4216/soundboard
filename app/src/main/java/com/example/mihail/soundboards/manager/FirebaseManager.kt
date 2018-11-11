@@ -1,13 +1,16 @@
 package com.example.mihail.soundboard.manager
 
+import android.app.DownloadManager
+import android.content.Context
+import android.net.Uri
+import android.os.Environment
 import android.util.Log
 import com.example.mihail.soundboards.models.MusicModel
 import com.google.firebase.database.*
 import com.google.gson.GsonBuilder
 import org.json.JSONObject
 import java.lang.Exception
-import java.util.ArrayList
-import java.util.HashMap
+import java.util.*
 
 
 class FirebaseManager {

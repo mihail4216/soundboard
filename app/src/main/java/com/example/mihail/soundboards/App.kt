@@ -1,12 +1,13 @@
 package com.example.mihail.soundboards
 
 import android.app.Application
-import com.example.mihail.soundboards.manager.FFmpegManager
+import io.realm.Realm
+import io.realm.RealmConfiguration
 
 class App : Application() {
 
-    var width:Int = 0
-    var height:Int = 0
+    var width: Int = 0
+    var height: Int = 0
 
     private object Holder {
         lateinit var instance: App
@@ -20,6 +21,17 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         Holder.instance = this
-        FFmpegManager.checkFFmpeg()
+        Realm.init(this)
+        val config = RealmConfiguration.Builder()
+            .name("base1")
+            .deleteRealmIfMigrationNeeded() // Migration to run instead of throwing an exception
+            .build()
+        Realm.setDefaultConfiguration(config)
+        Realm.getInstance(config)
+    }
+
+    override fun onTerminate() {
+        Realm.getDefaultInstance().close()
+        super.onTerminate()
     }
 }

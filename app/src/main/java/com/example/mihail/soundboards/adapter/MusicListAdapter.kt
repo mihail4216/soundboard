@@ -1,5 +1,9 @@
 package com.example.mihail.soundboards.adapter
 
+import android.app.DownloadManager
+import android.content.Context
+import android.net.Uri
+import android.os.Environment
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -7,14 +11,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.mihail.soundboards.App
-import com.example.mihail.soundboards.models.MusicModel
 import com.example.mihail.soundboards.R
 import com.example.mihail.soundboards.manager.AudioPlayer
-import com.example.mihail.soundboards.manager.FFmpegManager
+import com.example.mihail.soundboards.models.MusicModel
+import java.util.*
 
 
 class MusicListAdapter(var array: Array<MusicModel>) : RecyclerView.Adapter<MusicListAdapter.MusicViewHolder>() {
@@ -44,12 +48,12 @@ class MusicListAdapter(var array: Array<MusicModel>) : RecyclerView.Adapter<Musi
             mBtnShare = itemView.findViewById(R.id.share)
             mTxtName.text = musicModel.name
             mImageMusic.setOnClickListener {
-                AudioPlayer.instance.play(musicModel.music_url)
+                AudioPlayer.instance.play(Environment.DIRECTORY_DOWNLOADS+"/"+musicModel.music_url)
             }
 
             val coef = App.instance.width / 3
             mImageMusic.layoutParams.width = coef
-            mImageMusic.layoutParams.height = App.instance.height/3
+            mImageMusic.layoutParams.height = App.instance.height / 3
 
 
             var requestOptions = RequestOptions()
@@ -60,7 +64,10 @@ class MusicListAdapter(var array: Array<MusicModel>) : RecyclerView.Adapter<Musi
                 .into(mImageMusic)
 
             mBtnShare.setOnClickListener {
-                FFmpegManager.createAudio(musicModel.music_url)
+
+
+
+//                FFmpegManager.createAudio(musicModel.music_url)
             }
         }
 
