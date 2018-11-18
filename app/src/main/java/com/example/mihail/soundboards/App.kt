@@ -1,8 +1,6 @@
 package com.example.mihail.soundboards
 
 import android.app.Application
-import io.realm.Realm
-import io.realm.RealmConfiguration
 
 class App : Application() {
 
@@ -21,17 +19,17 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         Holder.instance = this
-        Realm.init(this)
-        val config = RealmConfiguration.Builder()
-            .name("base1")
-            .deleteRealmIfMigrationNeeded() // Migration to run instead of throwing an exception
-            .build()
-        Realm.setDefaultConfiguration(config)
-        Realm.getInstance(config)
+//        Realm.init(this)
+//        val config = RealmConfiguration.Builder()
+//            .name("base1")
+//            .deleteRealmIfMigrationNeeded() // Migration to run instead of throwing an exception
+//            .build()
+//        Realm.setDefaultConfiguration(config)
+//        Realm.getInstance(config)
     }
 
     override fun onTerminate() {
-        Realm.getDefaultInstance().close()
+//        Realm.getDefaultInstance().close()
         super.onTerminate()
     }
 }

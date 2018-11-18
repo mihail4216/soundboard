@@ -1,6 +1,5 @@
 package com.example.mihail.soundboards
 
-import com.example.mihail.soundboard.manager.FirebaseManager
 import org.junit.Test
 
 import org.junit.Assert.*

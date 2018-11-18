@@ -1,9 +1,5 @@
-package com.example.mihail.soundboard.manager
+package com.example.mihail.soundboards.manager
 
-import android.app.DownloadManager
-import android.content.Context
-import android.net.Uri
-import android.os.Environment
 import android.util.Log
 import com.example.mihail.soundboards.models.MusicModel
 import com.google.firebase.database.*
@@ -38,6 +34,7 @@ class FirebaseManager {
                         for (i in arrayMusic) {
                             if (i.isShow) {
                                 completeArray.add(i)
+                                FirebaseDatabase.getInstance().goOffline()
                             }
                         }
                         sec(completeArray.toTypedArray())
