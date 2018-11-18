@@ -29,12 +29,6 @@ class AudioPlayer private constructor() {
         player!!.setOnPreparedListener {
             it!!.start()
         }
-        player!!.setOnErrorListener { mp, what, extra ->
-
-            what
-            extra
-            true
-        }
         player!!.setDataSource(url)
         player!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
 

@@ -1,11 +1,32 @@
 package com.example.mihail.soundboards
 
 import android.app.Application
+import android.os.Environment
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.Volley
+import java.io.File
 
 class App : Application() {
 
     var width: Int = 0
     var height: Int = 0
+
+    fun getDirectoryApp(): File {
+        val file= File( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"sounds")
+        if (!file.exists())
+            file.mkdirs()
+        return file
+    }
+
+    private var mRequestQueue: RequestQueue? = null
+    val requestQueue: RequestQueue
+        get() {
+            if (mRequestQueue == null) {
+                mRequestQueue = Volley.newRequestQueue(applicationContext)
+            }
+            return mRequestQueue!!
+        }
+
 
     private object Holder {
         lateinit var instance: App

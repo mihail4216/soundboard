@@ -5,5 +5,7 @@ class MusicModel(
     var music_url: String,
     var author: String,
     var img_url: String,
+    var height: Int,
+    var width: Int,
     var isShow: Boolean = false
 )

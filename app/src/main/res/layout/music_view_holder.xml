@@ -9,7 +9,7 @@
             android:layout_height="wrap_content">
 
 
-        <VideoView
+        <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/img"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
